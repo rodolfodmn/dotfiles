@@ -4,13 +4,35 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
+Plugin 'itchyny/lightline.vim'
+Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'morhetz/gruvbox'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 call vundle#end()            " required
 " Don't try to be vi compatible
+
+" Meus sets marotos 
+set autoindent
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+let g:UltiSnipsExpandTrigger="<C-c>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
+set list
 set nocompatible
+set clipboard=unnamed
+inoremap <SPACE><SPACE> <ESC>
+inoremap ys m
 
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
@@ -18,7 +40,9 @@ filetype off
 " TODO: Load plugins here (pathogen or vundle)
 
 " Turn on syntax highlighting
+
 syntax on
+colorscheme gruvbox
 
 " For plugins to load correctly
 filetype plugin indent on
@@ -43,13 +67,6 @@ set encoding=utf-8
 
 " Whitespace
 set wrap
-set textwidth=79
-set formatoptions=tcqrn1
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set noshiftround
 
 " Cursor motion
 set scrolloff=3
@@ -90,13 +107,13 @@ nnoremap <F1> :set invfullscreen<CR>
 vnoremap <F1> :set invfullscreen<CR>
 
 " meus key map
+map <C-\> :noh<CR>
 map <C-n> :NERDTreeToggle<CR>
 map <C-p> :Ag<CR>
 
 " Textmate holdouts
 
 " Formatting
-map <leader>q gqip
 
 " Visualize tabs and newlines
 set listchars=tab:▸\ ,eol:¬
@@ -117,4 +134,5 @@ let g:solarized_termtrans=1
 " abri nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
