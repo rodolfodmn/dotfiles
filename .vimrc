@@ -35,7 +35,7 @@ set list
 set nocompatible
 set clipboard=unnamed
 map gc :GitGutterLineHighlightsToggle<CR>
-inoremap <SPACE><SPACE> <ESC>
+inoremap jj <ESC>
 inoremap ys m
 
 " Helps force plugins to load correctly when it is turned back on below
