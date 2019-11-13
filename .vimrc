@@ -4,6 +4,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'itchyny/lightline.vim'
@@ -16,10 +17,12 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 call vundle#end()            " required
 " Don't try to be vi compatible
 
 " Meus sets marotos 
+let NERDTreeShowHidden=1
 set autoindent
 set noexpandtab
 set tabstop=4
@@ -31,6 +34,7 @@ let g:UltiSnipsEditSplit="vertical"
 set list
 set nocompatible
 set clipboard=unnamed
+map gc :GitGutterLineHighlightsToggle<CR>
 inoremap <SPACE><SPACE> <ESC>
 inoremap ys m
 
