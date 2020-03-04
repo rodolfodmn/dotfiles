@@ -1,20 +1,31 @@
 call plug#begin('~/.vim/plugged')
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'ryanoasis/vim-devicons'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
-Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
-set encoding=UTF-8
+colorscheme dracula
+
+let g:loaded_clipboard_provider = 1
 inoremap jj <ESC>
 nmap <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
-colorscheme gruvbox
+"fzf
+nnoremap <C-p> :Files<Cr>
+
+set number
+set list
 
 " TextEdit might fail if hidden is not set.
 set hidden
