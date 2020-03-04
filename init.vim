@@ -10,11 +10,22 @@ Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'yuttie/comfortable-motion.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 colorscheme dracula
 
+noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
+noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
+let g:comfortable_motion_no_default_key_mappings = 1
+nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
+nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
+
+nnoremap <silent> <C-f> :call comfortable_motion#flick(200)<CR>
+nnoremap <silent> <C-b> :call comfortable_motion#flick(-200)<CR>
+let g:comfortable_motion_scroll_down_key = "j"
+let g:comfortable_motion_scroll_up_key = "k"
 let g:loaded_clipboard_provider = 1
 inoremap jj <ESC>
 nmap <C-n> :NERDTreeToggle<CR>
