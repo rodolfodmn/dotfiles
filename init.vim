@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+Plug 'sking/ag.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/emmet-vim'
@@ -35,6 +36,7 @@ vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
 "fzf
+nnoremap <C-f> :Rg<Cr>
 nnoremap <C-p> :Files<Cr>
 
 set number
