@@ -12,10 +12,12 @@ Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'roxma/vim-tmux-clipboard'
 call plug#end()
 
 colorscheme dracula
 
+set clipboard=unnamedplus
 noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
 noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
 let g:comfortable_motion_no_default_key_mappings = 1
@@ -28,7 +30,7 @@ let g:comfortable_motion_scroll_down_key = "j"
 let g:comfortable_motion_scroll_up_key = "k"
 let g:loaded_clipboard_provider = 1
 inoremap jj <ESC>
-nmap <C-n> :NERDTreeToggle<CR>
+map <C-t> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
