@@ -140,7 +140,7 @@ alias run=~/dev/bash/run_vue.sh
 alias mod=~/dev/bash/run_mod.sh
 alias upm=~/dev/bash/up_module.sh
 
-stores=/var/www/html/lojas
+stores=/var/www/html/stores
 
 export GOROOT=/usr/local/go
 GOPATH=$HOME/dev/go
