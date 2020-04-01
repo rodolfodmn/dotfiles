@@ -147,3 +147,4 @@ GOPATH=$HOME/dev/go
 export GOPATH
 export RDGO=$GOPATH/src/github.com/rodolfodmn
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=~/.npm-global/bin:$PATH
