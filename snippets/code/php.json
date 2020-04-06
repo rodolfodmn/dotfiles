@@ -52,6 +52,22 @@
 			"Mage::log($1, null, 'rdLog.log', true);"
 		],
 		"description": "Manda um Mage log"
+	},
+
+	"Mage Model": {
+		"prefix": "md",
+		"body": [
+			"Mage::getModel('$1');"
+		],
+		"description": "Manda um get model"
+	},
+
+	"Mage Model load": {
+		"prefix": "mdl",
+		"body": [
+			"Mage::getModel('$1')->load($2);"
+		],
+		"description": "Manda um get model com load"
 	}
 
 
