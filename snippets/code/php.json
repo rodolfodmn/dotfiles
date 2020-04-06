@@ -24,7 +24,7 @@
 		"prefix": "vde",
 		"body": [
 			"var_dump('$1');",
-			"exit"
+			"exit;"
 		],
 		"description": "Manda um var_dump com exit"
 	},
