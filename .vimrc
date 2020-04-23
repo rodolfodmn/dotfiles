@@ -1,128 +1,67 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-surround'
-Plugin 'morhetz/gruvbox'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim' 
+Plugin 'mattn/emmet-vim'
+Plugin 'posva/vim-vue'
+Plugin 'preservim/nerdtree'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'morhetz/gruvbox'
 call vundle#end()            " required
-" Don't try to be vi compatible
+filetype plugin indent on    " required
 
 " Meus sets marotos 
-set autoindent
-set noexpandtab
-set tabstop=4
+command! W :w
+set showmatch
 set shiftwidth=4
-let g:UltiSnipsExpandTrigger="<C-c>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
+set splitbelow splitright
+set path=**
+set softtabstop=4
+set expandtab
+set relativenumber
+set hidden
 set list
-set nocompatible
-set clipboard=unnamed
-map gc :GitGutterLineHighlightsToggle<CR>
-inoremap jj <ESC>
-inoremap ys m
-
-" Helps force plugins to load correctly when it is turned back on below
-filetype off
-
-" TODO: Load plugins here (pathogen or vundle)
-
-" Turn on syntax highlighting
-
-syntax on
-colorscheme gruvbox
-
-" For plugins to load correctly
-filetype plugin indent on
-
-" TODO: Pick a leader key
-" let mapleader = ","
-
-" Security
-set modelines=0
-
-" Show line numbers
-set number
-
-" Show file stats
-set ruler
-
-" Blink cursor on error instead of beeping (grr)
-set visualbell
-
-" Encoding
+set clipboard=unnamedplus
+set listchars=tab:▸\ ,eol:¬
 set encoding=utf-8
-
-" Whitespace
 set wrap
 
-" Cursor motion
-set scrolloff=3
-set backspace=indent,eol,start
-set matchpairs+=<:> " use % to jump between pairs
-runtime! macros/matchit.vim
-
-" Move up/down editor lines
+" meus key map
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <c-w><C-l>
+nnoremap <C-h> <C-w><C-h>
 nnoremap j gj
 nnoremap k gk
-
-" Allow hidden buffers
-set hidden
-
-" Rendering
-set ttyfast
-
-" Status bar
-set laststatus=2
-
-" Last line
-set showmode
-set showcmd
-
-" Searching
-nnoremap / /\v
-vnoremap / /\v
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set showmatch
-map <leader><space> :let @/=''<cr> " clear search
-
-" Remap help key.
-inoremap <F1> <ESC>:set invfullscreen<CR>a
-nnoremap <F1> :set invfullscreen<CR>
-vnoremap <F1> :set invfullscreen<CR>
-
-" meus key map
+map gst :vert Gstatus<CR>
+map <C-s> :w<CR>
+nnoremap <C-y> "+y
+vnoremap <C-y> "+y
+nnoremap <C-p> "+gP
+vnoremap <C-p> "+gP
+map so :only<CR>
 map <C-\> :noh<CR>
-map <C-p> :Ag<CR>
-
-" Textmate holdouts
-
-" Formatting
-
-" Visualize tabs and newlines
-set listchars=tab:▸\ ,eol:¬
-" Uncomment this to enable by default:
-" set list " To enable by default
-" Or use your leader key + l to toggle on/off
-map <leader>l :set list!<CR> " Toggle tabs and EOL
+inoremap jj <ESC>
+map fr :find<SPACE>
+map ff :Ag<CR>
+map <C-p> :Files<CR>
+map ls :NERDTreeToggle<CR>
+:nnoremap <C-n> :bprevious<CR>
+:nnoremap <C-m> :bnext<CR>
 
 " Color scheme (terminal)
+syntax on
+colorscheme gruvbox
 set t_Co=256
 set background=dark
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-" in ~/.vim/colors/ and uncomment:
-" colorscheme solarized
-"
+set rtp+=/usr/bin/fzf
