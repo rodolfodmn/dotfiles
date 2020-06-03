@@ -1,0 +1,1 @@
+/home/rodolfo/.local/share/omf/themes/yimmy/fish_prompt.fish
