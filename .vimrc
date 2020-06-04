@@ -109,13 +109,25 @@ set conceallevel=1
 
 " Remaps.  This is where the magic of vim happens
 nnoremap Y y$
-nmap <leader>h :wincmd h<CR>
-nmap <leader>j :wincmd j<CR>
-nmap <leader>k :wincmd k<CR>
-nmap <leader>l :wincmd l<CR>
+noremap ç l
+noremap l k
+noremap k j
+noremap j h
+nmap <leader>j :wincmd h<CR>
+nmap <leader>k :wincmd j<CR>
+nmap <leader>l :wincmd k<CR>
+nmap <leader>ç :wincmd l<CR>
 nmap <leader>u :UndotreeShow<CR>
+nmap <leader>s :w<CR>
+nmap <leader>ss :x<CR>
+nmap <leader>se :xa<CR>
+nmap <leader>qq :q!<CR>
+nmap <leader>id :G=gg<CR>
 nmap <leader>tr :tabprevious<CR>
-nmap <leader>tt   :tabnext<CR>
+nmap <leader>tt :tabnext<CR>
+nmap <leader>bn :bNext<CR>
+nmap <leader>bb :bprevious<CR>
+nmap <leader>bf :bfirst<CR>
 nmap <leader>nt :NERDTreeToggle<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
