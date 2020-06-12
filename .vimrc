@@ -28,12 +28,14 @@ autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
+"set rtp+=~/.fzf
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#begin('~/.vim/plugged')
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdcommenter'
 Plugin 'slim-template/vim-slim'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'airblade/vim-gitgutter'
@@ -128,6 +130,7 @@ nmap <leader>tt :tabnext<CR>
 nmap <leader>bn :bNext<CR>
 nmap <leader>bb :bprevious<CR>
 nmap <leader>bf :bfirst<CR>
+nmap <leader>ot :terminal<CR>
 nmap <leader>nt :NERDTreeToggle<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -137,7 +140,7 @@ map <C-\> :noh<CR>
 inoremap jj <ESC>
 
 "fzf
-nmap <leader>fa :Rg
+nmap <leader>fa :Rg<space>
 nmap <leader>p :Files<CR>
 
 "flutter dart 
