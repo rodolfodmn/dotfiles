@@ -80,6 +80,9 @@ export PATH="$PATH:/home/rodolfo/.cargo/bin"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+#bash files
+alias rser="~/dev/bash/restart_apache.sh"
+
 # goto folder
 alias grust="cd ~/dev/work/rust/"
 alias gmods="cd ~/dev/modules/"
@@ -97,13 +100,17 @@ bashs="$HOME/dev/bash"
 dockers="$HOME/dev/dockers"
 
 # execs
-alias vim="nvim"
+# alias vim="nvim"
 alias python="python3"
 alias runm1="~/dev/bash/ini_docker.sh"
 alias pixel="~/dev/aseprite/build/bin/aseprite"
+alias trus="~/dev/work/rust/magento-dev/target/debug/magento-dev"
+alias ov="nvim ."
+alias rzsh="source ~/.zshrc"
 
 # open configs
 alias nrc="nvim ~/.config/nvim/init.vim"
 alias vrc="nvim ~/.vimrc"
 alias zrc="nvim ~/.zshrc"
 alias ei3="nvim ~/.config/i3/config"
+alias terc="nvim ~/.config/xfce4/terminal/terminalrc"
