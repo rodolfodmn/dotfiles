@@ -5,9 +5,12 @@ set relativenumber
 set nohlsearch
 set hidden
 set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
+set autoindent noexpandtab tabstop=4 shiftwidth=4
+set list
+set listchars=eol:⏎,tab:»·,trail:␠,nbsp:⎵
+"set tabstop=4 softtabstop=4
+"set shiftwidth=4
+"set expandtab
 set smartindent
 set nu
 set nowrap
