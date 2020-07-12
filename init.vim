@@ -111,36 +111,39 @@ let g:javascript_conceal_underscore_arrow_function = "🞅"
 set conceallevel=1
 
 " Remaps.  This is where the magic of vim happens
-nnoremap Y y$
-noremap ç l
-noremap l k
-noremap k j
-noremap j h
-nmap <leader>j :wincmd h<CR>
-nmap <leader>k :wincmd j<CR>
-nmap <leader>l :wincmd k<CR>
-nmap <leader>ç :wincmd l<CR>
-nmap <leader>u :UndotreeShow<CR>
-nmap <leader>s :w<CR>
-nmap <leader>ss :x<CR>
-nmap <leader>se :xa<CR>
-nmap <leader>qq :q!<CR>
-nmap <leader>id :G=gg<CR>
-nmap <leader>tr :tabprevious<CR>
-nmap <leader>tt :tabnext<CR>
-nmap <leader>bn :bNext<CR>
-nmap <leader>bb :bprevious<CR>
-nmap <leader>bf :bfirst<CR>
-nmap <leader>ot :terminal<CR>
-nmap <leader>nt :NERDTreeToggle<CR>
-nmap <leader>fc :%s/\/\/ //g<CR>
-nmap <leader>fr :%s/
-vnoremap K :m '>+1<CR>gv=gv
-vnoremap L :m '<-2<CR>gv=gv
-map gst :vert Gstatus<CR>
-map so :only<CR>
-map <C-\> :noh<CR>
 inoremap jj <ESC>
+nnoremap Y y$                                                                       
+noremap ç l                                                                         
+noremap l k                                                                         
+noremap k j                                                                         
+noremap j h                                                                         
+nmap <leader>j :wincmd h<CR>                                                        
+nmap <leader>k :wincmd j<CR>                                                        
+nmap <leader>l :wincmd k<CR>                                                        
+nmap <leader>ç :wincmd l<CR>                                                        
+nmap <leader>u :UndotreeShow<CR>                                                    
+nmap <leader>sf :w<CR>                                                              
+nmap <leader>ss :x<CR>                                                              
+nmap <leader>sa :xa<CR>                                                             
+nmap <leader>qq :q!<CR>                                                             
+nmap <leader>id G=gg<CR>                                                            
+nmap <leader>tr :tabprevious<CR>                                                    
+nmap <leader>tt :tabnext<CR>                                                        
+nmap <leader>bx :bNext<CR>                                                          
+nmap <leader>bz :bprevious<CR>                                                      
+nmap <leader>bf :bfirst<CR>                                                         
+nmap <leader>bb :b<space><tab>                                                      
+nmap <leader>ot :terminal<CR>                                                       
+nmap <leader>nt :NERDTreeToggle<CR>                                                 
+nmap <leader>fr :%s/                                                                
+nmap <leader>ob A{}<esc>i<cr><esc>O                                                 
+nmap <leader>ya ggVGy                                                               
+nmap <leader>xa ggVGx                                                               
+nmap <leader>\\ :noh<CR>                                                            
+vnoremap K :m '>+1<CR>gv=gv                                                         
+vnoremap L :m '<-2<CR>gv=gv                                                         
+map gst :vert Gstatus<CR>                                                           
+map so :only<CR>  
 
 "fzf
 nmap <leader>fa :Rg<space>
