@@ -136,10 +136,10 @@ alias zrc="nvim ~/.zshrc"
 alias ei3="nvim ~/.config/i3/config"
 alias terc="nvim ~/.config/xfce4/terminal/terminalrc"
 # send configs
-alias snv="cat ~/.config/nvim/init.vim > dev/dotfiles/init.vim"
-alias szr="cat ~/.zshrc > dev/dotfiles/.zshrc"
-alias ste="cat ~/.config/xfce4/terminal/terminalrc > dev/dotfiles/terminalrc"
-alias si3="cat ~/.config/i3/config > dev/dotfiles/i3/config"
+alias snv="cat ~/.config/nvim/init.vim > ~/dev/dotfiles/init.vim"
+alias szr="cat ~/.zshrc > ~/dev/dotfiles/zshrc"
+alias ste="cat ~/.config/xfce4/terminal/terminalrc > ~/dev/dotfiles/terminal/terminalrc"
+alias si3="cat ~/.config/i3/config > ~/dev/dotfiles/i3/config"
 
 # old stufs
 alias im"=~/dev/bash/install_module.sh"
