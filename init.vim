@@ -1,115 +1,126 @@
+"" General configs
 syntax on
+let mapleader = " "
+set conceallevel=1
+set hidden
+set scrolloff=8
+set noshowmode
+set updatetime=50
+set shortmess+=c
+set encoding=utf8
 set guicursor=
 set noshowmatch
-set relativenumber
 set nohlsearch
-set hidden
-set noerrorbells
-set autoindent noexpandtab tabstop=4 shiftwidth=4
-set list
-set listchars=eol:⏎,tab:»·,trail:␠,nbsp:⎵
-"set tabstop=4 softtabstop=4
-"set shiftwidth=4
-"set expandtab
-set smartindent
-set nu
-set nowrap
 set smartcase
+set incsearch
+set autoindent noexpandtab tabstop=4 shiftwidth=4
+set smartindent
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
-set incsearch
-set termguicolors
-set scrolloff=8
-set noshowmode
+"" old tab
+"set tabstop=4 softtabstop=4
+"set shiftwidth=4
+"set expandtab
 
-" Give more space for displaying messages.
-set cmdheight=2
-" " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" " delays and poor user experience.
-set updatetime=50
-" " Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
-set encoding=utf8
-set splitbelow
-set noerrorbells
-"slim
-autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
-
+"" Plugins
 call plug#begin('~/.vim/plugged')
+
+"" Util
 Plug 'preservim/nerdcommenter'
-Plug 'slim-template/vim-slim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'airblade/vim-gitgutter'
-Plug 'rust-lang/rust.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
+Plug 'mbbill/undotree'
+Plug 'lyuts/vim-rtags'
+Plug 'jremmen/vim-ripgrep'
 
-"flutter
+"" Complete
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-utils/vim-man'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+"" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+"" Flutter
 Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
 Plug 'dart-lang/dart-vim-plugin'
 
-"Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'beautify-web/js-beautify'
+"" Rust
+Plug 'rust-lang/rust.vim'
+
+"" Js
 Plug 'posva/vim-vue'
-Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
-Plug 'jremmen/vim-ripgrep'
 Plug 'leafgarland/typescript-vim'
-Plug 'vim-utils/vim-man'
-Plug 'lyuts/vim-rtags'
-Plug 'mbbill/undotree'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'pangloss/vim-javascript'
+Plug 'beautify-web/js-beautify'
+
+"" Html
+Plug 'hail2u/vim-css3-syntax'
+Plug 'gorodinskiy/vim-coloresque'
+Plug 'tpope/vim-haml'
+Plug 'mattn/emmet-vim'
 
 "" Ui
+Plug 'slim-template/vim-slim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree'
 Plug 'gruvbox-community/gruvbox'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'sainnhe/gruvbox-material'
+
 call plug#end()
+
+
+"" Ui configs
+set nu
+set nowrap
+set splitbelow
+set noerrorbells
+set termguicolors
+set relativenumber
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 let g:gruvbox_contrast_dark = 'hard'
 if exists('+termguicolors')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 let g:gruvbox_invert_selection='0'
 
 colorscheme gruvbox
 set background=dark
 
+let g:webdevicons_enable_nerdtree = 1
+set list
+set listchars=eol:⏎,tab:»·,trail:␠,nbsp:⎵
+
+"" slim
+autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
+
+"" Rg
 if executable('rg')
-    let g:rg_derive_root='true'
+	let g:rg_derive_root='true'
 endif
 
+"" Snipets
 let g:UltiSnipsExpandTrigger="<c-b>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let mapleader = " "
-
-let g:netrw_browse_split = 2
-let g:netrw_banner = 0
-let g:netrw_winsize = 25
-
-let g:ctrlp_use_caching = 0
-
+"" NERDTree
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
-let g:webdevicons_enable_nerdtree = 1
 
-"Js
+"" Js
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
-
 
 let g:javascript_conceal_function             = "ƒ"
 let g:javascript_conceal_null                 = "ø"
@@ -124,15 +135,20 @@ let g:javascript_conceal_arrow_function       = "⇒"
 let g:javascript_conceal_noarg_arrow_function = "🞅"
 let g:javascript_conceal_underscore_arrow_function = "🞅"
 
-set conceallevel=1
 
-" Remaps.  This is where the magic of vim happens
+"" Remaps.
 inoremap jj <ESC>
 nnoremap Y y$
 noremap ç l
 noremap l k
 noremap k j
 noremap j h
+vnoremap K :m '>+1<CR>gv=gv
+vnoremap L :m '<-2<CR>gv=gv
+map gst :vert Gstatus<CR>
+map so :only<CR>
+
+"" Leader do
 nmap <leader>j :wincmd h<CR>
 nmap <leader>k :wincmd j<CR>
 nmap <leader>l :wincmd k<CR>
@@ -156,32 +172,43 @@ nmap <leader>\\ :noh<CR>
 nmap <leader>ot :terminal<CR>
 nmap <leader>nt :NERDTreeToggle<CR>
 nmap <leader>fr :%s/
-vnoremap K :m '>+1<CR>gv=gv
-vnoremap L :m '<-2<CR>gv=gv
-map gst :vert Gstatus<CR>
-map so :only<CR>
+"" fzf
+nmap <leader>fa :Rg<space>
+nmap <leader>p :Files<CR>
+"" dart
+map <leader>df :DartFmt<CR>
+
+"" Copy/Paste/Cut
+if has('unnamedplus')
+	set clipboard=unnamed,unnamedplus
+endif
+
+noremap YY "+y<CR>
+noremap <leader>p "+gP<CR>
+noremap XX "+x<CR>
+
+if has('macunix')
+	vmap <C-x> :!pbcopy<CR>
+	vmap <C-c> :w !pbcopy<CR><CR>
+endif
 
 "" Coc
 inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ coc#refresh()
+			\ pumvisible() ? "\<C-n>" :
+			\ coc#refresh()
 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-"fzf
-nmap <leader>fa :Rg<space>
-nmap <leader>p :Files<CR>
 
-"flutter dart 
-map <leader>df :DartFmt<CR>
+"" Flutter/Dart configs 
 let g:lsc_auto_map = v:true
 let g:lsp_settings = {
-            \ 'analysis-server-dart-snapshot': {
-            \     'cmd': [
-            \         '$DART_SDK/dart',
-            \         '$DART_SDK/dart $DART_SDK/snapshots/analysis_server.dart.snapshot',
-            \         '--lsp'
-            \     ],
-            \ },
-            \ }
+			\ 'analysis-server-dart-snapshot': {
+			\     'cmd': [
+			\         '$DART_SDK/dart',
+			\         '$DART_SDK/dart $DART_SDK/snapshots/analysis_server.dart.snapshot',
+			\         '--lsp'
+			\     ],
+			\ },
+			\ }
 
