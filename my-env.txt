@@ -1,0 +1,26 @@
+distro: debian
+shell: zsh
+edior: neovim
+wm: i3
+font: OpenDyslexic
+apps:
+- chorme, firefox
+- docker
+- gimp
+- steam 
+- taskwarrior
+- simple screen recorder
+- audacity
+- discord
+- smplayer
+- gparted
+- transmission
+- xfce4-terminal
+- librare office
+- dolphin
+- insomnia
+
+dev stuffs:
+- python 3
+- node 12
+
