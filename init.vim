@@ -1,6 +1,7 @@
 "" General configs
 syntax on
 let mapleader = " "
+set formatoptions-=cro
 set conceallevel=1
 set hidden
 set scrolloff=8
@@ -28,6 +29,8 @@ set undofile
 call plug#begin('~/.vim/plugged')
 
 "" Util
+Plug 'plasticboy/vim-markdown'
+Plug 'vimwiki/vimwiki'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -135,6 +138,8 @@ let g:javascript_conceal_arrow_function       = "⇒"
 let g:javascript_conceal_noarg_arrow_function = "🞅"
 let g:javascript_conceal_underscore_arrow_function = "🞅"
 
+"" Vimwiki
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
 "" Remaps.
 inoremap jj <ESC>
@@ -171,6 +176,7 @@ nmap <leader>xa ggVGx
 nmap <leader>\\ :noh<CR>
 nmap <leader>ot :terminal<CR>
 nmap <leader>nt :NERDTreeToggle<CR>
+nmap <leader>ww :VimwikiIndex<CR>
 nmap <leader>fr :%s/
 "" fzf
 nmap <leader>fa :Rg<space>
