@@ -121,11 +121,11 @@ storeso="/var/www/html/stores"
 # execs
 alias python="python3"
 alias runm1="~/dev/bash/ini_docker.sh"
+alias runm2="~/dev/bash/ini_docker_m2.sh"
 alias pixel="~/dev/aseprite/build/bin/aseprite"
 alias trus="~/dev/work/rust/magento-dev/target/debug/magento-dev"
 alias ov="nvim ."
 alias rzsh="source ~/.zshrc"
-alias pip="pip3"
 alias tes="~/dev/bash/teste.sh"
 alias pexe="~/dev/bash/exec_php.sh"
 
