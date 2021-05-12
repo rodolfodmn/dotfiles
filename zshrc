@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/usr/share/npm/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/rodolfo/.oh-my-zsh"
@@ -102,21 +103,24 @@ export PATH="$PATH:/home/rodolfo/.cargo/bin"
 alias rser="~/dev/bash/restart_apache.sh"
 
 # goto folder
-alias grust="cd ~/dev/work/rust/"
-alias gmods="cd ~/dev/modules/"
 alias gdev="cd ~/dev/"
-alias gstores="cd ~/dev/html/stores/"
 alias gbashs="cd ~/dev/bash"
-alias gdockers="cd ~/dev/dockers"
+alias gwd="cd ~/dev/work"
+alias gwwd="cd /var/www/html"
+
+# goto projects
+alias gvl="cd ~/devilbox/data/www/veiling-holambra"
 
 # folders
-rust="$HOME/dev/work/rust/"
-mods="$HOME/dev/modules/"
-dev="$HOME/dev/"
-stores="$HOME/dev/html/stores/"
-bashs="$HOME/dev/bash"
-dockers="$HOME/dev/dockers"
-storeso="/var/www/html/stores"
+alias wnv="$HOME/.config/nvim/"
+alias rust="$HOME/dev/work/rust/"
+alias dev="$HOME/dev/"
+alias stores="$HOME/dev/html/stores/"
+alias bashs="$HOME/dev/bash"
+alias alu="$HOME/dev/learn/alura/"
+alias lrn="$HOME/dev/learn/"
+alias dockers="$HOME/dev/dockers"
+alias storeso="/var/www/html/stores"
 
 # execs
 alias python="python3"
@@ -148,6 +152,10 @@ alias gab"=~/dev/bash/git_commit_api_bis2bis.sh"
 alias gtd"=~/dev/bash/git_commit_api_gtd.sh"
 alias gamp"=~/dev/bash/git_commit_api_places.sh"
 
+# dev dockers 
+alias inide="(cd ~/devilbox; docker-compose up)"
+alias gide="cd ~/devilbox && docker-compose stop && docker-compose rm -f && docker-compose up -d httpd php mysql bind redis elastic && ./shell.sh"
+
 # dev magento
 alias iniser="~/dev/bash/initserver.sh"
 alias run="~/dev/bash/run_vue.sh"
@@ -158,11 +166,14 @@ alias ca="~/dev/bash/cache_clean.sh"
 alias cs="~/dev/bash/cache_session_clean.sh"
 alias mg="~/dev/bash/mage_log.sh"
 alias cr="~/dev/bash/clear_reports.sh"
+export PATH=$PATH:$HOME/.magento-cloud/bin
 
 # git
 alias gc"=~/dev/bash/git_clone.sh"
 alias hh"=~/dev/bash/git_hard_head.sh"
 alias rh"=~/dev/bash/git_reset_head.sh"
 
-
-
+# BEGIN SNIPPET: Magento Cloud CLI configuration
+HOME=${HOME:-'/home/rodolfo'}
+export PATH="$HOME/"'.magento-cloud/bin':"$PATH"
+if [ -f "$HOME/"'.magento-cloud/shell-config.rc' ]; then . "$HOME/"'.magento-cloud/shell-config.rc'; fi # END SNIPPET
