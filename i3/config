@@ -31,7 +31,6 @@ bar {
 
 font pango:OpenDyslexic Nerd Font Bold 14
 
-
 #set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 #mode "$mode_system" {
     #bindsym l exec i3lock
@@ -44,8 +43,8 @@ font pango:OpenDyslexic Nerd Font Bold 14
     #bindsym Return mode "default"
     #bindsym Escape mode "default"
 #}
-#bindsym $mod+Pause mode "$mode_system"
-bindsym $mod+Pause exec i3lock
+exec --no-startup-id xsetroot -solid "#333333"
+bindsym $mod+Pause exec i3lock -c 323a45
 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -65,16 +64,23 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Sreen brightness controls
+bindsym $mod+F7 exec xbacklight -inc 20 # increase screen brightness
+bindsym $mod+F8 exec xbacklight -dec 20 # decrease screen brightness
+
+# Media player controls
+bindsym  $mod+F2 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym $mod+F1 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym $mod+F5 exec playerctl play-pause
+bindsym $mod+F4 exec playerctl next
+bindsym $mod+F3 exec playerctl previous
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -183,4 +189,3 @@ bindsym $mod+Shift+k resize grow height 10 px or 10 ppt
 bindsym $mod+Shift+l resize shrink height 10 px or 10 ppt
 bindsym $mod+Shift+ccedilla resize grow width 10 px or 10 ppt
 bindsym $mod+Shift+d resize 'default'
-
