@@ -110,6 +110,7 @@ alias gwwd="cd /var/www/html"
 
 # goto projects
 alias gvl="cd ~/devilbox/data/www/veiling-holambra"
+alias gat="cd ~/devilbox/data/www/atlas"
 
 # folders
 alias wnv="$HOME/.config/nvim/"
@@ -123,6 +124,7 @@ alias dockers="$HOME/dev/dockers"
 alias storeso="/var/www/html/stores"
 
 # execs
+alias his="history | grep"
 alias python="python3"
 alias runm1="~/dev/bash/ini_docker.sh"
 alias runm2="~/dev/bash/ini_docker_m2.sh"
@@ -153,10 +155,19 @@ alias gtd"=~/dev/bash/git_commit_api_gtd.sh"
 alias gamp"=~/dev/bash/git_commit_api_places.sh"
 
 # dev dockers 
+DOCKER_DIR="~/dev/work/my-containers"
+SCRIPTS_DIR="~/dev/work/stores/scripts"
+alias usd="python $SCRIPTS_DIR/manager/main.py"
+alias gd="$HOME/dev/work/my-containers/magento2"
+alias dw="docker-compose down"
+alias du="docker-compose up"
+alias dps="docker-compose ps"
+alias ds="docker ps"
 alias inide="(cd ~/devilbox; docker-compose up)"
 alias gide="cd ~/devilbox && docker-compose stop && docker-compose rm -f && docker-compose up -d httpd php mysql bind redis elastic && ./shell.sh"
 
 # dev magento
+alias gst="~/dev/work/stores"
 alias iniser="~/dev/bash/initserver.sh"
 alias run="~/dev/bash/run_vue.sh"
 alias mod"=~/dev/bash/run_mod.sh"
