@@ -1,21 +1,17 @@
 " NAVIGATION
 " br move
-noremap ç l
-noremap l k
-noremap k j
-noremap j h
-nmap <leader>j :wincmd h<CR>
-nmap <leader>k :wincmd j<CR>
-nmap <leader>l :wincmd k<CR>
-nmap <leader>ç :wincmd l<CR>
+nmap <leader>h :wincmd h<CR>
+nmap <leader>j :wincmd j<CR>
+nmap <leader>k :wincmd k<CR>
+nmap <leader>l :wincmd l<CR>
 
 nnoremap <silent> <leader>c :noh<cr>
 
 " Better window navigation
-nnoremap <C-j> <C-w>h
-nnoremap <C-k> <C-w>j
-nnoremap <C-l> <C-w>k
-nnoremap <C-ç> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " TAB in general mode will move to text buffer
 nnoremap <TAB> :bnext<CR>
