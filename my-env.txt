@@ -60,18 +60,24 @@ def mdown(t):
 def mlef(t):
     keyboard.press('s')
     for x in range(t):
+        keyboard.press('b')
+        keyboard.release('b')
         keyboard.press('7')
-        time.sleep(1)
         keyboard.release('7')
+        keyboard.press('8')
+        keyboard.release('8')
+        time.sleep(1)
 
     keyboard.release('s')
 
 def mrig(t):
     keyboard.press('r')
     for x in range(t):
+        keyboard.press('b')
+        keyboard.release('b')
         keyboard.press('7')
-        time.sleep(1)
         keyboard.release('7')
+        time.sleep(1)
 
     keyboard.release('r')
 
@@ -92,9 +98,10 @@ def vai():
 def volta():
     mlef(16)
 
-for x in range(5):
+for x in range(100):
     print(x)
     if (x > 0):
         volta()
         
     vai()
+
